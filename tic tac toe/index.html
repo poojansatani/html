@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyber Tic Tac Toe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MODE -->
+<div class="screen active" id="mode">
+  <h1 class="setup-title">⚡ CYBER TIC TAC TOE ⚡</h1>
+  <button onclick="go('computer')">🤖 Computer Mode</button><br>
+  <button onclick="go('multi')">🤝 Multiplayer Mode</button>
+</div>
+
+<!-- COMPUTER -->
+<div class="screen" id="computer">
+  <div class="setup-card">
+    <button class="home-btn" onclick="goHome()">🏠 Home</button>
+    <h2 class="setup-title">🤖 Computer Mode</h2>
+
+    <div class="field">
+      <label>Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="hard">Hardest</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>First Turn</label>
+      <select id="firstTurn">
+        <option value="X">You (X)</option>
+        <option value="O">Computer (O)</option>
+      </select>
+    </div>
+
+    <button onclick="startComputer()">▶ Start Game</button>
+  </div>
+</div>
+
+<!-- MULTIPLAYER -->
+<div class="screen" id="multi">
+  <div class="setup-card">
+    <button class="home-btn" onclick="goHome()">🏠 Home</button>
+    <h2 class="setup-title">🤝 Multiplayer</h2>
+
+    <div class="field">
+      <label>Player 1</label>
+      <input id="p1" placeholder="Player 1 name">
+    </div>
+
+    <div class="field">
+      <label>Player 2</label>
+      <input id="p2" placeholder="Player 2 name">
+    </div>
+
+    <div class="field">
+      <label>First Turn</label>
+      <select id="multiTurn">
+        <option value="X">Player 1 (X)</option>
+        <option value="O">Player 2 (O)</option>
+      </select>
+    </div>
+
+    <button onclick="startMulti()">▶ Start Game</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div class="screen" id="game">
+  <button class="home-btn" onclick="goHome()">🏠 Home</button>
+  <h5 id="status"></h5>
+
+  <div class="board">
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div id="win-line"></div>
+  </div>
+</div>
+
+<!-- CELEBRATION -->
+<div id="celebration">
+  <h1 id="resultText"></h1>
+  <button onclick="continueGame()">Continue</button>
+  <button onclick="goHome()">Home</button>
+</div>
+
+<!-- EXIT CONFIRM -->
+<div id="confirmExit">
+  <div class="confirm-box">
+    <h3>Game not finished</h3>
+    <p>Exit anyway?</p>
+    <button onclick="confirmExit(true)">Yes</button>
+    <button onclick="confirmExit(false)">No</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
